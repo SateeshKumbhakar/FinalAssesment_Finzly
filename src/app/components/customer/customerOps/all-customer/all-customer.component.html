@@ -1,0 +1,23 @@
+<app-header></app-header>       
+<button> Get all-customer </button>
+<table>
+    <tr> 
+        <th> S No </th>
+        <th> Customer Id</th>
+        <th>Customer Name</th>
+        <th> Customer City </th>
+        <th>State</th>
+        <th>Phone No</th>
+        <th>Email</th>
+    </tr>
+       
+    <tr *ngFor="let customer of customers;  let i = index">
+        <td>{{i+1}}</td>
+        <td>{{customer.customerId}}</td>
+        <td>{{customer.customerName}}</td>
+        <td>{{customer.address.city}}</td>
+        <td>{{customer.address.state}}</td>
+        <td>{{customer.contactInfo.email}}</td>
+        <td>{{customer.contactInfo.phone}}</td>
+    </tr>
+</table>

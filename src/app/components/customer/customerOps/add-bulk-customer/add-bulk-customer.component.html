@@ -1,0 +1,7 @@
+<app-header></app-header>
+<div class="container">
+    <h1>ADD In Bulk</h1>
+    <input type="file" (change)="onFileSelected($event)" accept=".csv" />
+    <button (click)="uploadFile()">Upload CSV</button>
+</div>
+

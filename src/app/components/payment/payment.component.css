@@ -1,0 +1,63 @@
+
+
+/* Style for the header (app-header) */
+app-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0; /* Add some top and bottom padding to the header */
+    text-align: center;
+    width: 100%; /* Make the header full-width */
+    position: relative; /* Set position to relative */
+    z-index: 1; /* Set a positive z-index value */
+}
+
+/* Center-align app-header contents */
+app-header h2 {
+    margin: 0;
+}
+
+/* Container for the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Vertically center the card container */
+    gap: 25px;
+    padding-top: 100px; /* Add top padding to create space below the header */
+}
+
+/* Basic styling for the card */
+.card {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Add transitions for smooth animation */
+}
+
+/* Styling for the card title */
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling for the access links */
+.access-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+/* Hover animation for the card */
+.card:hover {
+    transform: scale(1.05); /* Enlarge the card on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.access-link:hover {
+    color: #007bff;
+}

@@ -1,0 +1,49 @@
+
+<nav class="navbar bg-dark" *ngIf="isLoggedIn()" >
+    
+        <h2>
+          <a  routerLink="/dashboard">BHARAT BIJLI</a> 
+           
+        </h2>
+        <ul >
+        <li>
+            <a routerLink="/customer">Customer</a>
+        </li>
+        <li>
+            <a routerLink="/bill">Bill</a>
+        </li>
+        <li>
+            <a routerLink="/invoice">Invoice</a>
+        </li>
+        <li>
+            <a routerLink="/payment" >Payment</a>
+        </li>
+        <li>
+            <a routerLink="/transaction">Transaction</a>
+        </li>
+        <li>
+            <a  (click)="logout()" >Logout</a>
+        </li>
+    </ul>
+</nav>
+<nav class="navbar bg-dark" *ngIf="!isLoggedIn()" >
+    
+        <h2>
+          <a  routerLink="/home">BHARAT BIJLI</a>
+        
+        </h2>
+        <ul >
+        <li>
+            <a href="#">Carees</a>
+        </li>
+        <li>
+            <a href="#">Service</a>
+        </li>
+        <li>
+            <a href="#">About Us</a>
+        </li>
+        <li>
+            <a routerLink="/login" >Login</a>
+        </li>
+    </ul>
+</nav>
