@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="container">
+    <h1 class="large head-primary">Add New Bill</h1>
+
+    <form class="form" #addBillForm="ngForm" (ngSubmit)="onSubmit(addBillForm)">
+        <div class="form-items">
+            <label for="billDueDate">Bill Due Date:</label>
+            <input #billDueDate="ngModel" ngModel type="date" name="billDueDate"  id="billDueDate" placeholder="Select Bill Due Date"
+                required />
+        </div>
+
+        <div class="form-items">
+            <input #unitConsumption="ngModel" ngModel type="number" name="unitConsumption"
+                placeholder="Enter Unit Consumption" required />
+        </div>
+
+        <div class="form-items">
+            <label for="billDuration">Bill Duration:</label>
+            <select #billDuration="ngModel" ngModel name="billDuration" required>
+              <option value="" disabled>Select Bill Duration</option>
+              <!-- Use ngFor to generate options -->
+              <option *ngFor="let option of billDurationOptions" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </div>
+          
+
+        <div class="form-items">
+            <input #customerId="ngModel" ngModel type="number" name="customerId" placeholder="Enter Customer ID"
+                required />
+        </div>
+
+        <!-- <div class="form-items">
+            <input #creationDate="ngModel" ngModel type="date" name="creationDate" placeholder="Select Creation Date"
+                required />
+        </div> -->
+
+        <!-- <div class="form-items">
+            <label for="paid">Paid:</label>
+            <input type="checkbox" id="paid" name="paid" ngModel value="true" />
+        </div> -->
+
+        <div class="form-items">
+            <input type="submit" value="Add Bill" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <p class="my-1">
+        <strong>Click to</strong><br />
+        <a routerLink="/bill">See All Bills</a>
+    </p>
+</div>
