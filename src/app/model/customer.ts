@@ -9,14 +9,10 @@ export interface Customer {
          city:string;
          state:string;
          postalCode:string
-    }
+    },
     contactInfo: {
         email:string;
        phone:string;
     }
 
-}
-
-export interface Bill{
-    
 }

@@ -37,17 +37,21 @@ export class BillComponent implements OnInit {
   navigateToDeleteBill(customerId:number,billId:number){
     let confirmation = window.confirm('Are you sure you want to delete this record?');
     if (confirmation) {
-      console.log("clicked");
       this.billService.deleteBill(customerId,billId).subscribe((res)=>{
-       console.log(res);
-       this.router.navigate(["/bill"]);
+      //  console.log(res);
+       const index = this.bills.indexOf(res);
+       console.log(index);
+       if(index !== -1){
+         this.bills.splice(index,1);
+       }
+       
       })
     }
 
   }
-  navigateToUpdateBill(billId:number){
-
-
+  // Navigate for bill Updation
+   navigateToUpdateBill(customerId:number,billId:number){
+    this.router.navigate(["/update-bill",customerId,billId]);
   }
 
   

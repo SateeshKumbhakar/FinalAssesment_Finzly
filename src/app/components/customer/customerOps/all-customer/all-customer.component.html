@@ -1,7 +1,10 @@
 <app-header></app-header>       
-<button> Get all-customer </button>
+<div class="container">
+    <h1>Get All Customer </h1>
+</div>
 <table>
-    <tr> 
+    
+    <tr > 
         <th> S No </th>
         <th> Customer Id</th>
         <th>Customer Name</th>
@@ -9,15 +12,29 @@
         <th>State</th>
         <th>Phone No</th>
         <th>Email</th>
-    </tr>
        
-    <tr *ngFor="let customer of customers;  let i = index">
+        <th>Details</th>
+        <th>Update Customer</th>
+        <th>Delete</th>
+
+        
+    </tr>
+
+
+    <tr *ngFor="let customer of customers; let i = index" >
+    
         <td>{{i+1}}</td>
         <td>{{customer.customerId}}</td>
         <td>{{customer.customerName}}</td>
         <td>{{customer.address.city}}</td>
         <td>{{customer.address.state}}</td>
         <td>{{customer.contactInfo.email}}</td>
-        <td>{{customer.contactInfo.phone}}</td>
+        <td>{{customer.contactInfo.phone}}</td>    
+        <td><button class="btn btm-success " (click)="navigateToCustomerDetails(customer.customerId)" >Details</button></td>
+        <td><button class="btn btn-primary" (click)="navigateToUpdateCustomer(customer.customerId)" >Update</button></td>
+        <td><button class=" btn btn-danger" (click)="navigateToDeleteCustomer(customer.customerId)" >Delete</button></td>
+        
+        
     </tr>
+
 </table>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { EmpLoginService } from 'src/app/emp-login.service';
 import { Bill } from 'src/app/model/bill';
 import { BillService } from 'src/app/myservies/bill.service';
@@ -11,14 +12,14 @@ import { BillService } from 'src/app/myservies/bill.service';
 export class AddBillComponent implements OnInit {
   
   bill: any =<Bill>{}
+  errorMessage:string="";
+  isError=true;
   constructor(private authService:EmpLoginService,private billService:BillService) { }
 
   ngOnInit(): void {
     this.authService.isAuthenticate=true;
 
   }
-
-
   onSubmit(addBillForm:any){
     addBillForm = addBillForm.value;
     
@@ -32,6 +33,11 @@ export class AddBillComponent implements OnInit {
   
     this.billService.addBill(this.bill,this.bill.customerId).subscribe((res:any)=>{
       console.log(res);
+    },(errorServer)=>{
+       this.isError=false;
+      //Handle Error Here
+      this.errorMessage=errorServer.error;
+      console.log(errorServer.error);
     })
 
   }

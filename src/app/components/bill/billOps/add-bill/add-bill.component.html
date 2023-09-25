@@ -42,10 +42,15 @@
         <div class="form-items">
             <input type="submit" value="Add Bill" class="btn btn-primary" />
         </div>
+
+        
     </form>
 
     <p class="my-1">
         <strong>Click to</strong><br />
         <a routerLink="/bill">See All Bills</a>
     </p>
+    <div class="form-items alert alert-danger" [hidden]="isError" >
+        <p>{{errorMessage}}</p>
+    </div>
 </div>

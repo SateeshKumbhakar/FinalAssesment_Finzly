@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="card-container">
+    
+    <!-- Customers Card -->
+    <div class="card">
+        <div class="card-title">Customer: {{ customer.customerName }}</div>
+        <div class="card-content">
+            <p><strong>Aadhar Card No:</strong> {{ customer.customerAadharcardno }}</p>
+            <p><strong>Contact Info</strong>:Phone - {{ customer.contactInfo.email }}</p>
+            <p><strong>Contact Info:</strong> Email -{{ customer.contactInfo.phone}}</p>
+            <p><strong>OTP:</strong> {{ customer.otp }}</p>
+            <p><strong>Address:</strong> {{ customer.address.street }}, {{ customer.address.city }}, {{ customer.address.state }}, {{ customer.address.postalCode }}</p>
+           
+        </div>
+        <a class="btn-primary" routerLink="/customer-bill"  class="access-link">See Your Bill</a>
+    </div>
+   
+</div>

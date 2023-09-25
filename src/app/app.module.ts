@@ -23,6 +23,11 @@ import { AddBulkCustomerComponent } from './components/customer/customerOps/add-
 import { AllCustomerComponent } from './components/customer/customerOps/all-customer/all-customer.component';
 import { UpdateCustomerComponent } from './components/customer/customerOps/update-customer/update-customer.component';
 import { DeleteCustomerComponent } from './components/customer/customerOps/delete-customer/delete-customer.component';
+import { CustomerDetailsComponent } from './components/customer/customerOps/customer-details/customer-details.component';
+import { AddBillComponent } from './components/bill/billOps/add-bill/add-bill.component';
+import { UpdateBillComponent } from './components/bill/billOps/update-bill/update-bill.component';
+import { DeleteBillComponent } from './components/bill/billOps/delete-bill/delete-bill.component';
+import { BillDetailsComponent } from './components/bill/billOps/bill-details/bill-details.component';
 
 
 @NgModule({
@@ -45,6 +50,11 @@ import { DeleteCustomerComponent } from './components/customer/customerOps/delet
      AllCustomerComponent,
      UpdateCustomerComponent,
      DeleteCustomerComponent,
+     CustomerDetailsComponent,
+     AddBillComponent,
+     UpdateBillComponent,
+     DeleteBillComponent,
+     BillDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -40,8 +40,8 @@
         <td>{{bill.customerId}}</td>
         <td>{{bill.creationDate | date:'dd-MM-yyyy'}}</td>
         <td><button class="btn btm-success " (click)="navigateToBillDetails(bill.billId)" >Details</button></td>
-        <td><button class="btn btn-primary" (click)="navigateToUpdateBill(bill.billId)" >Update</button></td>
-        <td><button class=" btn btn-danger" (click)="navigateToDeleteBill(bill.customerId,bill.billId)" >Delete</button></td>
+        <td><button class="btn btn-primary" [disabled]="bill.paid"  (click)="navigateToUpdateBill(bill.customerId, bill.billId)" >Update</button></td>
+        <td><button class=" btn btn-danger"  [disabled]="bill.paid" (click)="navigateToDeleteBill(bill.customerId,bill.billId)" >Delete</button></td>
         
     </tr>
 </table>

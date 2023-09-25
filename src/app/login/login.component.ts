@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EmpLoginService } from '../emp-login.service';
-import { HttpErrorResponse } from '@angular/common/http';
+
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -10,16 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   numberPattern = "^[0-9]+$";
   loginFailedMsg: string = "";
   requestBody: any = {}
-  data: string = "";
-
-
+  interalErrorMessage:string="";
+  isLoggedIn = true;
 
   constructor(private loginService: EmpLoginService, private router: Router) { }
-
-
+  
   ngOnInit(): void {
   }
 
@@ -43,20 +43,18 @@ export class LoginComponent implements OnInit {
       else {
         this.loginService.isAuthenticate = false;
         sessionStorage.removeItem(response.token);
-        alert(response.errorMsg);
-        this.router.navigate(["/home"]);
+        // alert(response.errorMsg);
+        // this.router.navigate(["/home"]);
+        this.isLoggedIn=false;
+        this.interalErrorMessage = response.errorMsg;
+        console.log(this.interalErrorMessage);
       }
 
-    }), (error: HttpErrorResponse) => {
-      if (error instanceof SyntaxError) {
-        console.log(" Sateesh" + error)
-      } else {
-        console.log("saafgasa" + error.error);
-      }
+    }),(error:any)=>{
+      console.log(error.error);
+      // this.isLoggedIn=false;
+      // this.interalErrorMessage =error.error;
+    }  
     };
-    console.log(this.requestBody);
-    console.log(this.data);
-    //  loginForm.reset();
+   
   }
-
-}

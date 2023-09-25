@@ -1,1 +1,55 @@
-<p>update-bill works!</p>
+<app-header></app-header>
+<div class="container">
+    <h1 class="large head-primary">Update Bill</h1>
+
+    <form class="form" #updateBillForm="ngForm" (ngSubmit)="onUpdateBill(updateBillForm)">
+        <div class="form-items">
+            <label for="bId">Your Customer ID:</label>
+            <input #customerId="ngModel" ngModel type="text" [value]="billData.customerId" name="customerId"
+                placeholder="Enter Customer ID" readonly required />
+        </div>
+        <div class="form-items">
+            <label for="bId">Your Bill ID:</label>
+            <input type="text" id="bId" [value]="billData.billId" name="billId" ngModel readonly />
+        </div>
+        <div class="form-items">
+            <label for="billDueDate">Bill Due Date:</label>
+            <input #billDueDate="ngModel" ngModel type="date" name="billDueDate" id="billDueDate"
+                [value]="billData.billDueDate" placeholder="Select Bill Due Date" required />
+        </div>
+
+        <div class="form-items">
+            <input #unitConsumption="ngModel" ngModel type="text" name="unitConsumption" [pattern]="numberPattern "
+                placeholder="Enter Unit Consumption" [value]="billData.unitConsumption" required />
+        </div>
+
+        <div class="form-items alert alert-danger"
+            *ngIf="unitConsumption.touched && !unitConsumption.valid  && unitConsumption.errors?.pattern">
+            ** Please Enter number.
+        </div>
+        <div class="form-items">
+            <label for="billDuration">Bill Duration:</label>
+            <select #billDuration="ngModel" ngModel name="billDuration" required>
+                <option value="" disabled>Select Bill Duration</option>
+                <option *ngFor="let option of billDurationOptions" [value]="option.value">{{ option.label }}
+                </option>
+            </select>
+        </div>
+        <div class="form-items">
+            <label for="isPaid">Is Bill Paid:</label>
+            <input class="btn btn-success" #isPaid type="checkbox" name="paid" ngModel />
+        </div>
+        <div class="form-items">
+            <input type="submit" value="Update Bill" class="btn btn-primary " />
+        </div>
+
+    </form>
+
+    <p class="my-1">
+        <strong>Click to</strong><br />
+        <a routerLink="/bill">See All Bills</a>
+    </p>
+    <div class="form-items alert alert-danger" [hidden]="isError">
+        <p>{{ errorMessage }}</p>
+    </div>
+</div>

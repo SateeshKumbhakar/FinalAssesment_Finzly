@@ -1,1 +1,88 @@
-<p>add-customer works!</p>
+<app-header></app-header>
+<div class="container">
+  <h1 class="large head-primary">Customer !</h1>
+  <p class="paraStyle">
+    Add Customer
+  </p>
+ 
+  <form class="form" #addCustomerForm='ngForm' (ngSubmit)="onSubmit(addCustomerForm)">
+    <div class="form-items">
+      <input #cName="ngModel" ngModel type="text" name="customerName" placeholder=" Please Enter Customer Name "
+        required />
+    </div>
+
+
+    <!-- <div class="form-items alert alert-danger" *ngIf="employeeId.touched && !employeeId.valid ">
+      **Please Enter Vaild employeeId.
+      <div *ngIf="employeeId.errors?.pattern "> 
+        ** Please Enter employeeId as number.
+      </div> 
+    </div> -->
+    
+    <div class="form-items">
+        <input #customerAadharcardno="ngModel" ngModel type="text" name="customerAadharcardno" placeholder=" Please Enter customerAadhar card No "
+            required />
+      </div>
+    <div class="form-items">
+        <input #phone="ngModel" ngModel type="text" name="phone" placeholder=" Please Enter phone  No "
+            required />
+      </div>
+  
+    <div class="form-items">
+        <input #email="ngModel" ngModel type="email" name="email" placeholder=" Please Enter Email"
+            required />
+      </div>
+
+    <div class="form-items">
+        <input #city="ngModel" ngModel type="text" name="city" placeholder=" Please Enter city  Name"
+            required />
+      </div>
+  
+    <div class="form-items">
+        <input #state="ngModel" ngModel type="text" name="state" placeholder=" Please Enter State"
+            required />
+      </div>
+  
+    <div class="form-items">
+        <input #postalCode="ngModel" ngModel type="text" name="postalCode" placeholder=" Please Enter Postal Code"
+            required />
+      </div>
+  
+    <div class="form-items">
+      <input #otp="ngModel" ngModel  type="text" name="otp" placeholder=" Set your  OTP "
+        length="6" required  />
+    </div>
+    <div class="form-items alert alert-danger" *ngIf="otp.touched && !otp.valid ">
+      **Please Enter Vaild otp.
+      <!-- <div *ngIf="otp.errors?.length && otp.errors?.numberPattern"> 
+        ** Please Enter otp as number.
+      </div> -->
+    </div>
+
+    <div class="form-items">
+      <input #pass ="ngModel"  ngModel  type="password" name="password" placeholder="Set Password"  required  />
+    </div>
+    <div class="form-items alert alert-danger"  *ngIf ="pass.touched && !pass.valid" >
+       **Password Can't be Blank & should be atleast 6 character.
+      <div class="form-items alert alert-danger"  *ngIf ="pass.errors?.minLength">
+        **Password
+      </div>
+    </div>
+    <div class="form-items">
+      <input   type="submit" value="Add Now" class="btn btn-primary" />
+    </div>
+  </form>
+  <!-- [disabled]="!addCustomerForm.valid" -->
+  <!-- <span style="color: red;font-weight: bold;margin-top: 5px;">
+    {{loginFailedMsg}} </span> -->
+    <div class="form-items btn btn-danger" [hidden]="isError" >
+      <p>{{errorMessage}}</p>
+    </div>
+  <p class="my-1">
+   
+    <strong> click to</strong><br />
+    <a routerLink="/all-customer">
+    See All Customer
+    </a>
+  </p>
+</div>

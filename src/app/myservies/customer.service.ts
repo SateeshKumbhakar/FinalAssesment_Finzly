@@ -11,9 +11,9 @@ import { environment } from 'src/environments/environment';
 
 export class CustomerService {
   // customers :any []=[];
-   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' })
-  };
+  //  httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  // };
   baseUrl = environment.baseUrl;
  
   constructor(private http:HttpClient) { }
@@ -24,7 +24,16 @@ export class CustomerService {
 
   // Add in bulk
   addBulkCustomer(file:any):Observable<Object>{
-    return this.http.post<Object>(`${this.baseUrl}customer/add-customer-in-bulk`,file,this.httpOptions);
+    return this.http.post<Object>(`${this.baseUrl}customer/add-customer-in-bulk`,file);
+  }
+
+  // Add in Customer
+  addCustomer(customer:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}customer/add-customer`,customer);
+  }
+  // Add in Customer
+  getCustomer(customerId:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}customer/get-customer/${customerId}`);
   }
 
 
