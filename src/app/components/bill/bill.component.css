@@ -61,3 +61,48 @@ app-header h2 {
 .access-link:hover {
     color: #007bff;
 }
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center; /* Center-align the table content */
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center; /* Center-align the cell content */
+  }
+  
+
+ 
+  /* Style for the Update button */
+.update-button {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the Update button */
+  .update-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+  
+  /* Style for the Delete button */
+  .delete-button {
+    background-color: #dc3545; /* Red color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the Delete button */
+  .delete-button:hover {
+    background-color: #c82333; /* Darker red color on hover */
+  }
+  

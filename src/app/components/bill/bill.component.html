@@ -6,26 +6,43 @@
     <!-- Bills Card -->
     <div class="card">
         <div class="card-title">Add Bill</div>
-        <a routerLink="/Bill" class="access-link">Add new Bill</a>
+        <a routerLink="/add-bill" class="access-link">Add new Bill</a>
     </div>
-   
-    <!-- Payments Card -->
+  
     <div class="card">
         <div class="card-title">All Bill</div>
-        <a routerLink="/payment" class="access-link">See All Bill</a>
+        <a routerLink="/bill" class="access-link">See All Bill</a>
     </div>
-
-    <div class="card">
-        <div class="card-title">Update Bill</div>
-        <a routerLink="/invoice" class="access-link">Update Here</a>
-    </div>
-
-    <!-- Transactions Card -->
-    <div class="card">
-        <div class="card-title">Delete Bill</div>
-        <a routerLink="/transaction"class="access-link">Delete Here</a>
-    </div>
-
-    <!-- Invoices Card -->
-   
 </div>
+
+<table class="center-table ">
+    <tr>
+        <th>S No</th>
+        <th>Bill ID</th>
+        <th>Due Date</th>
+        <th>Unit Consumption</th>
+        <th>Bill Duration</th>
+        <th>Paid</th>
+        <th>Customer ID</th>
+        <th>Creation Date</th>
+        <th>Details</th>
+        <th>Update Bill</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let bill of bills; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{bill.billId}}</td>
+        <td>{{bill.billDueDate | date:'dd-MM-yyyy'}}</td>
+        <td>{{bill.unitConsumption}}</td>
+        <td>{{bill.billDuration}}</td>
+        <td>{{bill.paid ? 'Yes' : 'No'}}</td>
+        <td>{{bill.customerId}}</td>
+        <td>{{bill.creationDate | date:'dd-MM-yyyy'}}</td>
+        <td><button class="btn btm-success " (click)="navigateToBillDetails(bill.billId)" >Details</button></td>
+        <td><button class="btn btn-primary" (click)="navigateToUpdateBill(bill.billId)" >Update</button></td>
+        <td><button class=" btn btn-danger" (click)="navigateToDeleteBill(bill.customerId,bill.billId)" >Delete</button></td>
+        
+    </tr>
+</table>
+
