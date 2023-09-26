@@ -20,6 +20,7 @@ export class CustomerDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isAuthenticate=true;
     this.route.paramMap.subscribe((params:any) => {
+      
        this.customerId =+ params.get('id');  
       //  console.log("details" + this.customerId) ;
       this.getCustomer(this.customerId);

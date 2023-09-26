@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+  <h1 class="large head-primary">Invoice</h1>
+  <p class="paraStyle">Create Invoice</p>
+ 
+  <form class="form" #addInvoiceForm='ngForm' (ngSubmit)="onSubmit(addInvoiceForm)">
+   
+    <div class="form-items">
+        <label for="customerId">Customer ID: {{customerId}}</label>
+        <input #customerId="ngModel"  ngModel type="text" name="customerId" readonly    placeholder="Customer ID" required />
+      </div>
+
+      <div class="form-items">
+        <label for="billId">Bill ID:</label>
+        <input #billId="ngModel" ngModel type="text" name="billId"  placeholder="Bill ID" required readonly />
+      </div>
+
+    <div class="form-items">
+        <input #earlyPayment="ngModel" ngModel type="text" name="earlyPaymentDiscount" placeholder="Early Payment Discount %" readonly />
+      </div>
+      <div class="form-items">
+        <input #onlinePayment="ngModel" ngModel type="text" name="onlinePaymentDiscount" placeholder="Online Payment Discount %" readonly />
+      </div>
+
+    <div class="form-items">
+      <label for="paymentStatus">Payment Status:</label>
+      <select #paymentStatus="ngModel" ngModel name="paymentStatus" required readonly>   
+        <option value="true">Paid</option>
+        <option value="false">Unpaid</option>
+      </select>
+    </div>
+
+    <div class="form-items">
+      <input type="submit" value="Create Invoice Directly" class="btn btn-primary" />
+    </div>
+    <div class="form-items" [hidden] ="!isNotGenerated">
+      <p class="btn alert alert-danger">{{invoiceError}}</p>
+    </div>
+  </form>
+
+  <p class="my-1">
+    <strong>Click to</strong><br />
+    <a routerLink="/all-invoice">
+      See All Invoices
+    </a>
+  </p>
+</div>

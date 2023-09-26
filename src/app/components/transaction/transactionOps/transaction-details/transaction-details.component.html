@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Transaction Section</h1>
+</div>
+<div class="card">
+    <div class="card-header">
+      <h3>{{ transaction.payment.customer.customerName }}</h3>
+    </div>
+    <div class="card-content">
+      <p><strong>Transaction:</strong> {{ transaction.transactionId}}</p>
+      <p><strong>Payment ID:</strong> {{ transaction.payment.paymentId}}</p>
+      <p><strong>Bill ID:</strong> {{transaction.payment.bill.billId }}</p>
+      <p><strong>Email:</strong> {{ transaction.payment.customer.contactInfo.phone }}</p>
+      <p><strong>Phone:</strong> {{ transaction.payment.customer.contactInfo.email }}</p>
+      <p><strong>Bill Amount:</strong> {{transaction.payment.amount }}</p>
+      <p><strong>Payment Reference No.: </strong> {{transaction.payment.referenceNo}}</p>
+      <p><strong>Payment Status:</strong> {{transaction.payment.paymentStatus? "success":"failed"}}</p>
+    </div>
+  </div>
+  
+  

@@ -18,13 +18,13 @@ export class PaymentService {
   }
 
   //Get A Payment
-  getTransaction(paymentId: number): Observable<any> {
+  getPayment(paymentId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}payments/${paymentId}`);
   }
 
   //Add New Payment
   addPayment(customerId: number, billId: number, paymentData: any): Observable<Object> {
-    return this.http.post(`${this.baseUrl}customer/${customerId}/${billId}`, paymentData);
+    return this.http.post(`${this.baseUrl}customer/${customerId}/${billId}/payment`, paymentData);
   }
 
   //Update Payment

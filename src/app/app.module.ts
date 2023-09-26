@@ -28,6 +28,17 @@ import { AddBillComponent } from './components/bill/billOps/add-bill/add-bill.co
 import { UpdateBillComponent } from './components/bill/billOps/update-bill/update-bill.component';
 import { DeleteBillComponent } from './components/bill/billOps/delete-bill/delete-bill.component';
 import { BillDetailsComponent } from './components/bill/billOps/bill-details/bill-details.component';
+import { InvoiceDetailsComponent } from './components/invoice/invoiceOps/invoice-details/invoice-details.component';
+import { AddInvoiceComponent } from './components/invoice/invoiceOps/add-invoice/add-invoice.component';
+import { AllInvoiceComponent } from './components/invoice/invoiceOps/all-invoice/all-invoice.component';
+import { UpdateInvoiceComponent } from './components/invoice/invoiceOps/update-invoice/update-invoice.component';
+import { AllTransactionComponent } from './components/transaction/transactionOps/all-transaction/all-transaction.component';
+import { AddTransactionComponent } from './components/transaction/transactionOps/add-transaction/add-transaction.component';
+import { TransactionDetailsComponent } from './components/transaction/transactionOps/transaction-details/transaction-details.component';
+import { AddPaymentComponent } from './components/payment/paymentOps/add-payment/add-payment.component';
+import { UpdatePaymentComponent } from './components/payment/paymentOps/update-payment/update-payment.component';
+import { AllPaymentComponent } from './components/payment/paymentOps/all-payment/all-payment.component';
+import { PaymentDetailsComponent } from './components/payment/paymentOps/payment-details/payment-details.component';
 
 
 @NgModule({
@@ -55,6 +66,17 @@ import { BillDetailsComponent } from './components/bill/billOps/bill-details/bil
      UpdateBillComponent,
      DeleteBillComponent,
      BillDetailsComponent,
+     InvoiceDetailsComponent,
+     AddInvoiceComponent,
+     AllInvoiceComponent,
+     UpdateInvoiceComponent,
+     AllTransactionComponent,
+     AddTransactionComponent,
+     TransactionDetailsComponent,
+     AddPaymentComponent,
+     UpdatePaymentComponent,
+     AllPaymentComponent,
+     PaymentDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   numberPattern = "^[0-9]+$";
-  loginFailedMsg: string = "";
+ 
   requestBody: any = {}
   interalErrorMessage:string="";
   isLoggedIn = true;

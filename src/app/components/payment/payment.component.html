@@ -1,19 +1,38 @@
 <app-header></app-header>
 <div class="container">
     <h1>Payment Section</h1>
+    <div class="card-title">Add Payment
+    <button class="btn btn-success" routerLink="/all-invoice">Add new Payment</button>
+    </div>
 </div>
-<div class="card-container">
-    <!-- Payments Card -->
-    <div class="card">
-        <div class="card-title">Add Payment</div>
-        <a routerLink="/Payment" class="access-link">Add new Payment</a>
-    </div>
-   
-    <div class="card">
-        <div class="card-title">All Payment</div>
-        <a routerLink="/payment" class="access-link">See All Payment</a>
-    </div>
 
-   
-   
-</div>
+<h1 class="container"></h1>
+<table class="center-table">
+    <tr>
+        <th>S No</th>
+        <th>Payment ID</th>
+        <th>Customer ID</th>
+        <th>Payment Mode</th>
+        <th>Payment Method</th>
+        <th>Payment Status</th>
+        <th>Amount</th>
+        <th>Reference No</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let payment of payments; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{payment.paymentId}}</td>
+        <td>{{payment.customer.customerId}}</td>
+        <td>{{payment.paymentMode}}</td>
+        <td>{{payment.paymentMethod}}</td>
+        <td >{{payment.paymentStatus ? 'Paid' : 'Unpaid'}}</td>
+        <td>{{payment.amount | currency:'INR'}}</td>
+        <td>{{payment.referenceNo}}</td>
+        <td>
+            <button class="btn btn-success" (click)="navigateToPaymentDetails(payment)">Details</button>
+            <button class="btn btn-primary" [disabled]="payment.paymentStatus" (click)="updatePayment(payment)">Update</button>
+            <button class="btn btn-success" [disabled]="!payment.paymentStatus" (click)="addTransaction(payment)">Transaction</button>
+        </td>
+    </tr>
+</table>

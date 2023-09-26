@@ -54,5 +54,10 @@ export class BillComponent implements OnInit {
     this.router.navigate(["/update-bill",customerId,billId]);
   }
 
+  //Navigate To Bill Generation
+  navigateToInvoiceGeneration(customerId:number, billId:number){
+    this.router.navigate(["/add-invoice",customerId,billId]);
+
+  }
   
 }

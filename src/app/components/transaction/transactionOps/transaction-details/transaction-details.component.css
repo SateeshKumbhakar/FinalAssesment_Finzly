@@ -1,0 +1,30 @@
+/* Card Container */
+.card {
+    width: 650px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 20px;
+    margin-left: 250px
+}
+
+/* Card Header */
+.card-header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+}
+
+/* Card Text */
+.card-content p {
+    margin-bottom: 10px;
+}
+
+/* Customize as needed */

@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn():boolean{
    return this.loginService.isAuthenticate;
   }
+  
   logout(){
     this.loginService.isAuthenticate=false;
     sessionStorage.removeItem("token");

@@ -1,16 +1,31 @@
 <app-header></app-header>
 <div class="container">
     <h1>Transaction Section</h1>
-</div>
-<div class="card-container">
-    <!-- Transactions Card -->
-    <div class="card">
-        <div class="card-title">Add Transaction</div>
-        <a routerLink="/Transaction" class="access-link">Add new Transaction</a>
-    </div>
-    
-    <div class="card">
+</div >
+    <div class="card my-2">
         <div class="card-title">All Transaction</div>
-        <a routerLink="/payment" class="access-link">See All Transaction</a>
+        <a routerLink="/transaction" class="access-link">See All Transaction</a>
     </div>   
-</div>
+
+
+<table class="center-table">
+    <tr>
+        <th>S No</th>
+        <th>Transaction ID</th>
+        <th>Payment ID</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let transaction of transactions; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ transaction.transactionId }}</td>
+        <td>{{ transaction.payment.paymentId }}</td>
+        <td>{{ transaction.amount | currency:'INR' }}</td>
+        <td>{{ transaction.paymentStatus ? 'Paid' : 'Unpaid' }}</td>
+        <td>
+            <button class="btn btn-success" (click)="viewTransactionDetails(transaction)">Details</button>
+        </td>
+    </tr>
+</table>

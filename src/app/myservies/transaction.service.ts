@@ -22,7 +22,7 @@ export class TransactionService {
   }
   //Add New Tranaction
   addTransaction( paymentId:number,transaction:any): Observable<Object> {   
-    return this.http.post(`${this.baseUrl}customer/${paymentId}/transaction`,transaction); 
+    return this.http.post(`${this.baseUrl}customer/payment/${paymentId}/transaction`,transaction); 
   }
 
   //Update Transaction

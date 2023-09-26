@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<div class="card">
+    <div class="card-header">
+      Invoice Details
+    </div>
+  <div >  <button class="btn btn-success" >get invoiceId</button></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <strong>Invoice ID:</strong> {{invoice.amount }}
+        </div>
+        <div class="col">
+          <strong>Customer Name:</strong> {{ invoice.customer.customerName }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <strong>Amount:</strong> {{ invoice.amount | currency:"INR" }}
+        </div>
+        <div class="col">
+          <strong>Due Date:</strong> {{ invoice.bill.billDueDate | date:'dd-MM-yyyy' }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <strong>Unit Consumption:</strong> {{ invoice.unitConsumption }}
+        </div>
+        <div class="col">
+          <strong>Bill Duration:</strong> {{ invoice.bill.billDuration }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <strong>Paid:</strong> {{ invoice.paid ? 'Yes' : 'No' }}
+        </div>
+        <div class="col">
+          <strong>Creation Date:</strong> {{ invoice.creationDate | date:'dd-MM-yyyy HH:mm:ss' }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <strong>Customer Aadhar Card No:</strong> {{ invoice.customer.customerAadharcardno }}
+        </div>
+        <div class="col">
+          <strong>Customer Email:</strong> {{ invoice.customer.contactInfo.email }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <strong>Customer Phone:</strong> {{ invoice.customer.contactInfo.phone }}
+        </div>
+        <div class="col">
+          <strong>Payment Status:</strong> {{ invoice.paymentStatus ? 'Paid' : 'Unpaid' }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

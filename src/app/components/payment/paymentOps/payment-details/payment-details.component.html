@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Payment Section</h1>
+</div>
+<div class="card">
+    <div class="card-header">
+      <h3>{{ payment.customer.customerName }}</h3>
+    </div>
+    <div class="card-content">
+      <p><strong>Email:</strong> {{ payment.customer.contactInfo.phone }}</p>
+      <p><strong>Phone:</strong> {{ payment.customer.contactInfo.email }}</p>
+      <p><strong>Address:</strong> {{ payment.customer.address.street }}, {{ payment.customer.address.city }}, {{ payment.customer.address.state }}, {{ payment.customer.address.postalCode }}</p>
+      <p><strong>Bill ID:</strong> {{payment.bill.billid }}</p>
+      <p><strong>Bill Amount:</strong> {{payment.amount }}</p>
+      <p><strong>Due Date:</strong> {{ payment.bill.billDueDate |  date:'dd-MM-yyyy' }}</p>
+      <p><strong>Bill Duration:</strong> {{ payment.bill.billDuration }}</p>
+      <p><strong>Unit Consumption:</strong> {{ payment.bill.unitConsumption }} KW</p>
+      <p><strong>Payment Reference No.: </strong> {{ payment.referenceNo}}</p>
+      <p><strong>Paid:</strong> {{ payment.bill.paid ? 'Yes' : 'No' }}</p>
+      <p><strong>Payment Status:</strong> {{ payment.paymentStatus? "success":"failed"}}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="container">
+    <h1 class="large head-primary">Update Payment</h1>
+
+    <form class="form" #updatePaymentForm="ngForm" (ngSubmit)="onUpdate(updatePaymentForm)">
+        <div class="form-items">
+            <label for="customerId">Customer ID:</label>
+            <input disabled #customerId="ngModel" ngModel type="text" name="customerId" [(ngModel)]="payment.customer.customerId"  placeholder="Enter Customer ID"
+                required />
+        </div>
+
+        <div class="form-items">
+            <label for="customerId">Payment ID:</label>
+            <input disabled #customerId="ngModel" ngModel type="text" name="paymentId" [(ngModel)]="payment.paymentId"  placeholder="Enter Customer ID"
+                required />
+        </div>
+
+        <div class="form-items">
+            <label for="billId">Bill ID:</label>
+            <input disabled #billId="ngModel" ngModel type="text" name="billId" [(ngModel)]="payment.bill.billId"
+                placeholder="Enter Bill ID" required />
+        </div>
+
+        <div class="form-items">
+            <label for="paymentMode">Payment Mode:</label>
+            <select #paymentMode="ngModel" ngModel name="paymentMode" required>
+                <option value="" disabled>Select Payment Mode</option>
+                <!-- Use ngFor to generate options -->
+                <option *ngFor="let option of paymentModeOptions" [value]="option">{{ option }}</option>
+            </select>
+        </div>
+
+        <div class="form-items">
+            <label for="paymentMethod">Payment Method:</label>
+
+            <select #paymentMethod="ngModel" ngModel name="paymentMethod" required>
+                <option value="" disabled>Select Payment Method</option>
+                <!-- Use ngFor to generate options -->
+                <option *ngFor="let option of paymentMethodOptions" [value]="option">{{ option }}</option>
+            </select>
+        </div>  
+        <div class="form-items">
+            <label for="paymentMethod">Payment Status:</label>
+
+            <select #paymentMethod="ngModel" ngModel name="paymentMethod" required>
+                <option value="" disabled>Select Payment Status</option>
+                <!-- Use ngFor to generate options -->
+                <option *ngFor="let option of paymentStatus" [value]="option">{{ option }}</option>
+            </select>
+        </div>  
+       
+        <div class="form-items">
+            <input type="submit" value="Add Payment" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <p class="my-1">
+        <strong>Click to</strong><br />
+        <a routerLink="/payment">See All Payments</a>
+    </p>
+    <div class="form-items alert alert-danger" [hidden]="!isError">
+        <p>{{ errorMessage }}</p>
+    </div>
+</div>
